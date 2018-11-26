@@ -1,0 +1,14 @@
+{
+    "name": "nurgeld/brain-games",
+    "description": "cli",
+    "bin": ["bin/php-package"],
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nurgeld",
+            "email": "nurgeldy@gmail.com"
+        }
+    ],
+    "require": {}
+}
