@@ -3,7 +3,7 @@
     "description": "cli",
     "autoload": {
         "files": ["bin/brain-games"]
-    }
+    },
     "bin": ["bin/php-package"],
     "type": "project",
     "license": "MIT",
