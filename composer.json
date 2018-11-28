@@ -2,7 +2,10 @@
     "name": "nurgeld/brain-games",
     "description": "cli",
     "autoload": {
-        "files": ["bin/brain-games"]
+        "files": [
+            "bin/brain-games",
+            "src/Cli.php"
+        ]
     },
     "bin": ["bin/brain-games"],
     "type": "project",
