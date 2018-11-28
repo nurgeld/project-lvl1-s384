@@ -13,5 +13,7 @@
             "email": "nurgeldy@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "wp-cli/php-cli-tools": "*"
+    }
 }
