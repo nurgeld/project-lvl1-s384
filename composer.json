@@ -5,7 +5,10 @@
         "files": [
             "bin/brain-games",
             "src/Cli.php"
-        ]
+        ],
+        "psr-4": {
+            "BrainGames\\": "src"
+        }
     },
     "bin": ["bin/brain-games"],
     "type": "project",
