@@ -7,7 +7,7 @@
             "src/Cli.php"
         ],
         "psr-4": {
-            "BrainGames\\": "src"
+            "BrainGames\\Cli\\": "src/"
         }
     },
     "bin": ["bin/brain-games"],
