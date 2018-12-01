@@ -29,10 +29,7 @@ function run()
                 break;
         }
 
-        return [
-            'question' => $question,
-            'correctAnswer' => $correctAnswer
-        ];
+        return [$question, $correctAnswer];
     };
 
     $calcGame = calc();

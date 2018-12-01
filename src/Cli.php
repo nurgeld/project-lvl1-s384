@@ -3,7 +3,7 @@
 namespace BrainGames\Cli;
 
 use function \cli\line;
-use function BrainGames\Even\gameEven;
+#use function BrainGames\Even\gameEven;
 
 function play($gameParts)
 {
@@ -19,12 +19,12 @@ function play($gameParts)
     $steps = 3;
 
     while ($steps > 0) {
-        $game = $gameParts['gameType'];
-        $questionAndCorrectAnswer = $game();
-        $question = $questionAndCorrectAnswer['question'];
-        $correctAnswer = $questionAndCorrectAnswer['correctAnswer'];
+        #$game = $gameParts['gameType'];
+        
+        $question = $gameParts['gameType'][0];
+        $correctAnswer = $gameParts['gameType'][1];
         line("Question: %s", $question);
-        $correctAnswer = $game['correctAnswer'];
+        
         $answer = \cli\prompt('Your answer');
         if ($answer == $correctAnswer) {
             line('Correct!');
