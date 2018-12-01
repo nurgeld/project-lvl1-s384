@@ -13,12 +13,11 @@ function run()
     line("Hello, %s!", $name);
 }
 
-function runEven()
+function play($gameParts)
 {
     line('Welcome to the Brain Game!');
 
-    $game = gameEven();
-    line($game['gamePromt']);
+    line($gameParts['gamePromt']);
     line('');
 
     $name = \cli\prompt('May I have your name?');
@@ -28,7 +27,7 @@ function runEven()
     $steps = 3;
 
     while ($steps > 0) {
-        $game = gameEven();
+        $game = gameParts['game']; // function with question and answer in array
         $question = $game['question'];
         line("Question: %s", $question);
         $correctAnswer = $game['correctAnswer'];
