@@ -19,7 +19,7 @@ function play($gameParts)
     $steps = 3;
 
     while ($steps > 0) {
-        $game = gameParts['gameType'];
+        $game = $gameParts['gameType'];
         $questionAndCorrectAnswer = $game();
         $question = $questionAndCorrectAnswer['question'];
         $correctAnswer = $questionAndCorrectAnswer['correctAnswer'];

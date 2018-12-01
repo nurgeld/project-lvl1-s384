@@ -34,7 +34,7 @@ function run()
             'correctAnswer' => $correctAnswer
         ];
     };
-    return play([
+    play([
         'gamePromt' => $gamePromt,
         'gameType' => $calc
     ]);
