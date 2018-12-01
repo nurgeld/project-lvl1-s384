@@ -6,7 +6,7 @@ use function BrainGames\Cli\play;
 
 function run()
 {
-    $gamePromt = 'What is the result of the expression?';
+    $gamePrompt = 'What is the result of the expression?';
 
     $calc = function () {
         $num1 = rand(1, 20);
@@ -31,5 +31,5 @@ function run()
         return [$question, $correctAnswer];
     };
 
-    play($gamePromt, $calc);
+    play($gamePrompt, $calc);
 }

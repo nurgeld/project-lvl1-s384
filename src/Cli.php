@@ -4,11 +4,11 @@ namespace BrainGames\Cli;
 
 use function \cli\line;
 
-function play($gamePromt, $game)
+function play($gamePrompt, $game)
 {
     line('Welcome to the Brain Game!');
 
-    line($gamePromt);
+    line($gamePrompt);
     line('');
 
     $name = \cli\prompt('May I have your name?');
