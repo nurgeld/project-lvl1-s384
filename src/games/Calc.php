@@ -8,7 +8,7 @@ function run()
 {
     $gamePromt = 'What is the result of the expression?';
 
-    $calc = function ()
+    function calc()
     {
         $num1 = rand(1, 50);
         $num2 = rand(1, 50);
@@ -34,9 +34,11 @@ function run()
             'correctAnswer' => $correctAnswer
         ];
     };
+
+    $calcGame = calc();
     play([
         'gamePromt' => $gamePromt,
-        'gameType' => $calc
+        'gameType' => $calcGame
     ]);
 }
 /*
