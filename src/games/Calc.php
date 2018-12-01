@@ -8,10 +8,9 @@ function run()
 {
     $gamePromt = 'What is the result of the expression?';
 
-    function calc()
-    {
-        $num1 = rand(1, 50);
-        $num2 = rand(1, 50);
+    $calc = function () {
+        $num1 = rand(1, 20);
+        $num2 = rand(1, 20);
         $operations = ['+', '-', '*'];
         $operator = $operations[rand(0, 2)];
 
@@ -32,23 +31,5 @@ function run()
         return [$question, $correctAnswer];
     };
 
-    $calcGame = calc();
-    play([
-        'gamePromt' => $gamePromt,
-        'gameType' => $calcGame
-    ]);
+    play($gamePromt, $calc);
 }
-/*
-function run() use ($gamePromt)
-{
-    return play([
-        'gamePromt' => $gamePromt,
-        'game' => $CalcLogic
-    ]);
-}
-
-play([
-    'gamePromt' => $gamePromt,
-    'game' => $CalcLogic
-]);
-*/

@@ -3,13 +3,12 @@
 namespace BrainGames\Cli;
 
 use function \cli\line;
-#use function BrainGames\Even\gameEven;
 
-function play($gameParts)
+function play($gamePromt, $game)
 {
     line('Welcome to the Brain Game!');
 
-    line($gameParts['gamePromt']);
+    line($gamePromt);
     line('');
 
     $name = \cli\prompt('May I have your name?');
@@ -19,10 +18,10 @@ function play($gameParts)
     $steps = 3;
 
     while ($steps > 0) {
-        #$game = $gameParts['gameType'];
+        $gameParts = $game();
         
-        $question = $gameParts['gameType'][0];
-        $correctAnswer = $gameParts['gameType'][1];
+        $question = $gameParts[0];
+        $correctAnswer = $gameParts[1];
         line("Question: %s", $question);
         
         $answer = \cli\prompt('Your answer');
