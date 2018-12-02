@@ -20,7 +20,7 @@ function run()
         $randIndex = rand(1, 9);
         $correctAnswer = elementOfProgression($a1, $d, $randIndex);
 
-        function iter2($curr, $a1, $d, $n, $randIndex, $question, $correctAnswer)
+        function iter($curr, $a1, $d, $n, $randIndex, $question, $correctAnswer)
         {
             if ($curr == $n) {
                 $questionString = implode(' ', $question);
@@ -28,9 +28,9 @@ function run()
             }
             $element = elementOfProgression($a1, $d, $curr);
             $question[] = ($curr == $randIndex) ? ".." : $element;
-            return iter2($curr + 1, $a1, $d, $n, $randIndex, $question, $correctAnswer);
+            return iter($curr + 1, $a1, $d, $n, $randIndex, $question, $correctAnswer);
         }
-        return iter2(1, $a1, $d, $n, $randIndex, [], $correctAnswer);
+        return iter(1, $a1, $d, $n, $randIndex, [], $correctAnswer);
     };
 
     play($gamePromt, $progression);
