@@ -4,20 +4,16 @@ namespace BrainGames\games\Prime;
 
 use function BrainGames\Cli\play;
 
-function isPrime($num)
+function isPrime($num, $curr = 2)
 {
-    function iter($curr, $num)
-    {
-        if ($curr ** 2 > $num) {
-            return true;
-        }
-        if ($num % $curr == 0) {
-            return false;
-        }
-
-        return iter($curr + 1, $num);
+    if ($curr ** 2 > $num) {
+        return true;
     }
-    return iter(2, $num);
+    if ($num % $curr == 0) {
+        return false;
+    }
+
+    return isPrime($num, $curr + 1);
 }
 
 function run()
