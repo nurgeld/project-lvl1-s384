@@ -17,27 +17,29 @@ function play($gamePrompt, $game)
 
     $steps = 3;
 
-    while ($steps > 0) {
-        $gameParts = $game();
+    function iter($acc, $game, $name) {
+        if ($acc == 0) {
+            line("Congratulations, {$name}!");
+            return;
+        }
         
+        $gameParts = $game();
         $question = $gameParts[0];
         $correctAnswer = $gameParts[1];
         line("Question: %s", $question);
-        
         $answer = \cli\prompt('Your answer');
         if ($answer == $correctAnswer) {
             line('Correct!');
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
             line("Let's try again, {$name}");
-            break;
+            return;
         }
-        $steps -= 1;
 
-        if ($steps <= 0) {
-            line("Congratulations, {$name}!");
-        }
+        iter($acc - 1, $game, $name);
     }
+
+    iter($steps, $game, $name);
 }
 
 function run()
