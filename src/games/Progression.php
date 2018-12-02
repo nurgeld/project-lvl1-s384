@@ -13,8 +13,7 @@ function run()
 {
     $gamePromt = 'What number is missing in the progression?';
 
-    $progression = function ($curr = 1)
-    {
+    $progression = function ($curr = 1) {
         $a1 = rand(1, 10);
         $d = rand(1, 10);
         $n = 10;
@@ -34,7 +33,7 @@ function run()
 
         $question = implode(' ', $array);
         return [$question, $correctAnswer];
-    };        
+    };
 
     play($gamePromt, $progression);
 }
