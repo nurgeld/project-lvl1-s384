@@ -6,17 +6,18 @@ use function BrainGames\Cli\play;
 
 function isPrime($num)
 {
-    if ($num == 1) {
-        return false;
-    }
-
-    for ($i = 2; $i ** 2 <= $num; $i += 1) {
-        if ($num % $i == 0) {
+    function iter($curr, $num)
+    {
+        if ($curr ** 2 > $num) {
+            return true;
+        }
+        if ($num % $curr == 0) {
             return false;
         }
-    }
 
-    return true;
+        return iter($curr + 1, $num);
+    }
+    return iter(2, $num);
 }
 
 function run()

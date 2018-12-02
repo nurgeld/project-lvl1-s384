@@ -37,10 +37,10 @@ function play($gamePrompt, $game)
             return;
         }
 
-        iter($acc - 1, $game, $name);
+        return iter($acc - 1, $game, $name);
     }
 
-    iter($steps, $game, $name);
+    return iter($steps, $game, $name);
 }
 
 function run()

@@ -19,33 +19,19 @@ function run()
         $n = 10;
         $randIndex = rand(1, 9);
         $correctAnswer = elementOfProgression($a1, $d, $randIndex);
-        $array = [];
-        $i = 0;
-        while ($i < $n) {
-            if ($i == $randIndex) {
-                $array[] = '..';
-            } else {
-                $array[] = elementOfProgression($a1, $d, $i);
-            }
-            $i += 1;
-        }
 
-        $question = implode(' ', $array);
-        return [$question, $correctAnswer];
-    };
-        /*
-        function iter($curr, $a1, $d, $n, $randIndex, $question, $correctAnswer)
+        function iter2($curr, $a1, $d, $n, $randIndex, $question, $correctAnswer)
         {
-            if ($curr = $n) {
+            if ($curr == $n) {
                 $questionString = implode(' ', $question);
                 return [$questionString, $correctAnswer];
             }
             $element = elementOfProgression($a1, $d, $curr);
             $question[] = ($curr == $randIndex) ? ".." : $element;
-            return iter($curr + 1, $a1, $d, $n, $randIndex, $question, $correctAnswer);
+            return iter2($curr + 1, $a1, $d, $n, $randIndex, $question, $correctAnswer);
         }
-        return iter(1, $a1, $d, $n, $randIndex, [], $correctAnswer);
-    };*/
+        return iter2(1, $a1, $d, $n, $randIndex, [], $correctAnswer);
+    };
 
     play($gamePromt, $progression);
 }
