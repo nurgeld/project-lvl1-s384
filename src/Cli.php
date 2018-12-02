@@ -17,7 +17,8 @@ function play($gamePrompt, $game)
 
     $steps = 3;
 
-    function iter($acc, $game, $name) {
+    function iter($acc, $game, $name)
+    {
         if ($acc == 0) {
             line("Congratulations, {$name}!");
             return;
